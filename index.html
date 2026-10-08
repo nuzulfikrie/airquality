@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sekolah Al-Amin and Boarding School Selangor Air Quality</title>
+<meta name="description" content="Live air quality dashboard for Sekolah Al-Amin, SAM and boarding schools across Selangor, Malaysia. Data: WAQI / AirNet.">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+<link rel="stylesheet" href="assets/style.css">
+<base target="_blank">
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap">
+    <div class="brand">
+      <h1>Sekolah Al-Amin and Boarding School <span>Selangor Air Quality</span></h1>
+      <div class="sub">Live US AQI (with dominant pollutant) &amp; PM<sub>2.5</sub> &middot; data from <a href="https://waqi.info" target="_blank" rel="noopener">WAQI</a> &amp; <a href="https://aqicn.org" target="_blank" rel="noopener">AirNet</a></div>
+    </div>
+    <div class="status">
+      <div id="overall" class="overall">—</div>
+      <div class="updated">updated <span id="updated">…</span>
+        <button id="refresh" class="btn" title="Refresh now">↻</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section id="map-wrap">
+    <div id="map"></div>
+    <div class="legend" id="legend"></div>
+  </section>
+
+  <nav id="filters" class="filters" aria-label="Filter schools by group"></nav>
+  <section id="cards" class="cards"><!-- school cards injected --></section>
+
+  <footer class="foot">
+    <p>AQI uses the US EPA scale. Nearest monitoring station within ~25&nbsp;km shown per campus.
+    Official DOE station AQI is shown with the pollutant that drives it (often PM10, not PM2.5).
+    PM<sub>2.5</sub> in &micro;g/m&sup3; comes from AirNet community sensors, converted with the 2024 US EPA breakpoints;
+    community sensor data may differ from official stations.</p>
+    <p class="copy">&copy; <span id="year">2026</span> nuzulfikrie &middot; <a href="https://fikriesalam.dev" target="_blank" rel="noopener">fikriesalam.dev</a></p>
+  </footer>
+</main>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script src="assets/app.js"></script>
+<script>document.getElementById("year").textContent=new Date().getFullYear();</script>
+</body>
+</html>
